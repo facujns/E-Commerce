@@ -38,7 +38,7 @@ const botonFiltroNombre = document.getElementById('sortByNameBtn');
                           window.location = "products.html"
                       }
                               
-                      function sortAndShowCategories(sortCriteria, productsArray){
+                      function sortAndShowProducts(sortCriteria, productsArray){
                         currentSortCriteria = sortCriteria;
                     
                         if(productsArray != undefined){
@@ -61,24 +61,24 @@ const botonFiltroNombre = document.getElementById('sortByNameBtn');
                       });
                           
                         document.getElementById("sortAsc").addEventListener("click", function(){
-                          sortAndShowCategories(ORDER_ASC_BY_NAME);
+                          sortAndShowProducts(ORDER_ASC_BY_NAME);
                       });
                   
                       document.getElementById("sortDesc").addEventListener("click", function(){
                       
-                        sortAndShowCategories(ORDER_DESC_BY_NAME);
+                        sortAndShowProducts(ORDER_DESC_BY_NAME);
                       });
                       document.getElementById("filtroRel").addEventListener("click", function(){
                         console.log("a");  
-                        sortAndShowCategories(ORDER_BY_PROD_COUNT);
+                        sortAndShowProducts(ORDER_BY_PROD_COUNT);
 
                       });
                 
                       document.getElementById('filtroAsc').addEventListener('click', function(){
-                         sortAndShowCategories(ORDER_ASC_BY_COST);
+                         sortAndShowProducts(ORDER_ASC_BY_COST);
                       });
                       document.getElementById("filtroDesc").addEventListener('click', function(){
-                         sortAndShowCategories(ORDER_DESC_BY_COST);
+                         sortAndShowProducts(ORDER_DESC_BY_COST);
                       });
 
                       
