@@ -9,8 +9,22 @@
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
   <link href="css/font-awesome.min.css" rel="stylesheet">
   <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/alertify.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+<style> body {
+  background-image: url("img/productinfo-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+}
+.infoYcomm{
+  background-color: rgb(228, 224, 224);
+}
+
+</style>
 </head>
 
 <body>
@@ -31,18 +45,40 @@
           <li class="nav-item">
             <a class="nav-link" href="sell.html">Vender</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item" id="showUser">
+            
           </li>
         </ul>
       </div>
     </div>
   </nav>
   <main>
-    <div class="container">
-      <div class="alert alert-danger text-center" role="alert">
-        <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
-      </div>
-    </div>
+   <div class="container infoYcomm" id="container">
+ 
+   </div>
+   <div class="container infoYcomm" id="container2">
+
+
+   </div>
+   <div class="container infoYcomm">
+   <div class="row">
+  <div class="col-12">
+    <h4>Comentar</h4>
+    <span style="display:none;" id="alertError">Debes ingresar algun comentario</span>
+    <label for="exampleFormControlTextarea1">Tu opinión</label><br>
+    <textarea class="" id="product-info-textarea" rows="4" cols="70"></textarea><br>
+    <label for="exampleFormControlSelect1">Tu puntuación</label>
+    <select class="form-control" id="comment-select" style="width: 12%">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+    </select><br>X
+    <button type="submit" class="btn btn-dark" id="comment-btn" style="width:40%">Enviar</button>
+  </div>
+   </div>
+  </div>
   </main>
   <footer class="text-muted">
     <div class="container">
@@ -65,6 +101,9 @@
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/init.js"></script>
   <script src="js/product-info.js"></script>
+  <script src="js/alertify.js"></script>
+
+  
 </body>
 
 </html>

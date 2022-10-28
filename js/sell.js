@@ -168,9 +168,9 @@ document.addEventListener("DOMContentLoaded", function(e){
         })
 }}
 function cerrarSesion(){
-  localStorage.setItem('user', "") || sessionStorage.setItem('user', "");
-  location.reload();
-}
+    localStorage.removeItem('user'), sessionStorage.removeItem('user');
+    location.reload();
+    };     
 
 
 

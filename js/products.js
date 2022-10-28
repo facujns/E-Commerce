@@ -176,21 +176,25 @@ const botonFiltroNombre = document.getElementById('sortByNameBtn');
                       if (((minCount == undefined) || (minCount != undefined && parseInt(category.cost) >= minCount)) &&
                           ((maxCount == undefined) || (maxCount != undefined && parseInt(category.cost) <= maxCount))){
               
-                          htmlContentToAppend += `<div class="card " style="width: 17rem;">
+                          htmlContentToAppend += `<div onclick="setProdID(${category.id})"class="card " style="width: 17rem;">
                           <img id="imagen" src="${category.image}"class="card-img-top" alt="Card image cap">
                           <div class="card-body">
                           <h5 class="card-title">${category.name} - ${category.cost}</h5>
                            <p class="card-text">${category.description}</p>
                           <p class="card-text"><small>${category.soldCount} vendidos</small></p>
                           </div></div>`
+                          
                       }
               
                       cards.innerHTML = htmlContentToAppend;
                   }
               }     
                     
-                              
-       
+              function setProdID(id){
+                localStorage.setItem('prodID', id );
+                window.location = "product-info.html"
+              }                       
+    
       
               fetch(PRODUCTS_URL + catID + EXT_TYPE)
 
@@ -203,7 +207,7 @@ const botonFiltroNombre = document.getElementById('sortByNameBtn');
      
         for(let product of productos){
             i++;
-             cards.innerHTML +=`<div class="card " style="width: 17rem;">
+             cards.innerHTML +=`<div onclick="setProdID(${product.id})class="card "style="width: 17rem;">
                <img id="imagen" src="${product.image}"class="card-img-top" alt="Card image cap">
                <div class="card-body">
                <h5 class="card-title">${product.name} - ${product.cost}</h5>
@@ -248,8 +252,8 @@ const botonFiltroNombre = document.getElementById('sortByNameBtn');
                                       })
                               }}
                               function cerrarSesion(){
-                                localStorage.setItem('user', "") || sessionStorage.setItem('user', "");
+                                localStorage.removeItem('user'), sessionStorage.removeItem('user');
                                 location.reload();
-                              };                          
+                                };                               
                               
     
