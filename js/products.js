@@ -176,8 +176,8 @@ const botonFiltroNombre = document.getElementById('sortByNameBtn');
                       if (((minCount == undefined) || (minCount != undefined && parseInt(category.cost) >= minCount)) &&
                           ((maxCount == undefined) || (maxCount != undefined && parseInt(category.cost) <= maxCount))){
               
-                          htmlContentToAppend += `<div onclick="setProdID(${category.id})"class="card " style="width: 17rem;">
-                          <img id="imagen" src="${category.image}"class="card-img-top" alt="Card image cap">
+                          htmlContentToAppend += `<div onclick="setProdID(${category.id})"class="card cursor-pointer" style="width: 17rem;">
+                          <img id="imagen" src="${category.image}"class="card-img-top cursor-pointer" alt="Card image cap">
                           <div class="card-body">
                           <h5 class="card-title">${category.name} - ${category.cost}</h5>
                            <p class="card-text">${category.description}</p>
@@ -207,9 +207,9 @@ const botonFiltroNombre = document.getElementById('sortByNameBtn');
      
         for(let product of productos){
             i++;
-             cards.innerHTML +=`<div onclick="setProdID(${product.id})class="card "style="width: 17rem;">
-               <img id="imagen" src="${product.image}"class="card-img-top" alt="Card image cap">
-               <div class="card-body">
+             cards.innerHTML +=`<div onclick="setProdID(${product.id})"class="card cursor-pointer"style="width: 17rem; ">
+               <img id="imagen" src="${product.image}"class="card-img-top cursor-pointer" alt="Card image cap">
+               <div class="card-body ">
                <h5 class="card-title">${product.name} - ${product.cost}</h5>
                 <p class="card-text">${product.description}</p>
                <p class="card-text"><small>${product.soldCount} unidades disponibles</small></p>
@@ -235,12 +235,19 @@ const botonFiltroNombre = document.getElementById('sortByNameBtn');
                                 // MOSTRAR PERFIL // BOTON INICIO DE
                                 sesionOn();
                                 function showUser(){
-                                document.getElementById('showUser').innerHTML = `<div class="dropdown"><a class="nav-link usuario">${localStorage.getItem('user') || sessionStorage.getItem('user')}</a>
-                                                                                 <div class="dropdown-content">
-                                                                                <a class="nav-link" onclick="cerrarSesion()">Cerrar Sesion</a>
-                                                                                 </div>
-                                                                                 </div> `;
-                                                                                }
+                                  document.getElementById('showUser').innerHTML = 
+                                  
+                                  ` <a class="nav-link dropdown-toggle text-dark fw-bold" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                  ${localStorage.getItem('user') || sessionStorage.getItem('user')}
+                                  </a>
+                                  <ul class="dropdown-menu bg-light">
+                                  <li><a class="dropdown-item text-dark" href="./cart.html">Carrito</a></li>
+                                  <li><a class="dropdown-item text-dark" href="./my-profile.html">Mi perfil</a></li>
+                                  <li><hr class="dropdown-divider"></li>
+                                  <li><a class="dropdown-item text-dark" href="#" onclick="cerrarSesion()">Cerrar Sesión</a></li>
+                                  </ul>`
+                                  
+                                  }
                                 function sesionOn(){
                                   if(localStorage.getItem('user') || sessionStorage.getItem('user'))
                                       showUser();

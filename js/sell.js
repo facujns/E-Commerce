@@ -151,12 +151,19 @@ document.addEventListener("DOMContentLoaded", function(e){
   // MOSTRAR PERFIL // BOTON INICIO DE SESION
   sesionOn();
   function showUser(){
-  document.getElementById('showUser').innerHTML = `<div class="dropdown"><a class="nav-link usuario">${localStorage.getItem('user') || sessionStorage.getItem('user')}</a>
-                                                   <div class="dropdown-content">
-                                                  <a class="nav-link" onclick="cerrarSesion()">Cerrar Sesion</a>
-                                                   </div>
-                                                   </div> `;
-                                                  }
+    document.getElementById('showUser').innerHTML = 
+    
+    ` <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    ${localStorage.getItem('user') || sessionStorage.getItem('user')}
+    </a>
+    <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="./cart.html">Carrito</a></li>
+    <li><a class="dropdown-item" href="./my-profile.html">Mi perfil</a></li>
+    <li><hr class="dropdown-divider"></li>
+    <li><a class="dropdown-item" href="#" onclick="cerrarSesion()">Cerrar Sesión</a></li>
+    </ul>`
+    
+    }
   function sesionOn(){
     if(localStorage.getItem('user') || sessionStorage.getItem('user'))
         showUser();

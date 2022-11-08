@@ -28,24 +28,24 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-1">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-white p-1 border border-secondary border-1 text-dark">
     <div class="container">
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      <button class="navbar-toggler text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+        <span class="navbar-toggler-icon text-dark"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav w-100 justify-content-between">
           <li class="nav-item">
-            <a class="nav-link" href="index.html">Inicio</a>
+            <a class="nav-link text-dark fw-bold" href="index.html">Inicio</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="categories.html">Categorías</a>
+            <a class="nav-link text-dark fw-bold" href="categories.html">Categorías</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="sell.html">Vender</a>
+            <a class="nav-link text-dark fw-bold" href="sell.html">Vender</a>
           </li>
-          <li class="nav-item" id="showUser">
+          <li class="nav-item dropdown" id="showUser">
             
           </li>
         </ul>
@@ -54,7 +54,7 @@
   </nav>
   <main>
    <div class="container infoYcomm" id="container">
- 
+    
    </div>
    <div class="container infoYcomm" id="container2">
 
@@ -74,11 +74,18 @@
       <option>3</option>
       <option>4</option>
       <option>5</option>
-    </select><br>X
+    </select><br>
     <button type="submit" class="btn btn-dark" id="comment-btn" style="width:40%">Enviar</button>
   </div>
    </div>
   </div>
+  <div class="container infoYcomm">
+    <div class="row" id="relatedProds">
+
+    </div>
+   
+  </div>
+
   </main>
   <footer class="text-muted">
     <div class="container">
@@ -102,7 +109,7 @@
   <script src="js/init.js"></script>
   <script src="js/product-info.js"></script>
   <script src="js/alertify.js"></script>
-
+ 
   
 </body>
 

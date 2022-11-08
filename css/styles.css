@@ -191,41 +191,24 @@ a.custom-card:hover {
 }
 
 /* AGREGADO POR MI */
+/* NAV BAR */
+
+.dropdown-menu{
+  background-color: black;
+  
+}
+li .dropdown-item{
+  color: white;
+}
+
 /* INDEX */
-.usuario{
-  color:white;
-  padding: 5px;
-  cursor: pointer;
-  border-radius: 4px;
-  
-  
-}
-.usuario:hover{
-  background-color: rgb(54, 54, 50);
-}
+
+
 #cards{
   margin: 0 10%;
   position: relative;
 }
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: black;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
 
-}
-.dropdown-content a {
-  float: none;
-  color: black;
-  padding: 12px 16px;
-  text-decoration: underline;
-  display: block;
-  text-align: center;
-  cursor: pointer;;
- 
-}
 .dropdown:hover .dropdown-content {
   display: block;
 }
@@ -236,11 +219,9 @@ a.custom-card:hover {
   margin-bottom: auto;
 }
 
-.mucho-mas{
-  
-}
 
-/* PRODUCTS */
+
+/*  ODUCTS */
 .filter-bar1{
   width: 400px;
 margin-left: 10%;
@@ -306,85 +287,8 @@ margin-left: 10%;
 
 
 /* PAGINA LOGIN */
-.titulo{
-  text-align: center;
-  color: #ffffff;
-  padding: 0;
-  transform: translate(0, -10px);
-  font-size: 200%;
-  font-weight: 600;
-}
-
-.fotoLogin{
-  display: block;
-  margin-right: auto;
-  margin-left: auto;
-  width: 60%;
-  height: 160px;
-  min-width: 100px;
-  margin-bottom: 0;
-  transform: translate(0, -40px);
-  border-radius: 15px;
-  border: 1.5px solid #4d4d4d;
-}
-.formulario{
-  width: 40%;
-  margin: 0 auto;
-  
-  
-  
-}
 
 
-.btn{
-  border-radius: 20px;
-  display: block;
-  margin-right: auto;
-  margin-left: auto;
-  width: 80%;
-  height: 45px;
-  font-size: 19px;
-  font-weight: 550;
-  transform: translate(0, -10px);
-  
-}
-
-
-
-.form-label{
-  
-  font-weight: 700;
-  color: rgb(255, 255, 255);
-  display: block;
-  text-align: center;
-
-  
-}
-.form-check-label{
-  font-size: 13px;
-  font-family: system-ui, sans-serif;
-  font-weight: 700;
-  line-height: 1.1;
-  color: black;
-  margin-left: 5px;
-}
-.form-check-label:hover{
-  color:white;
-  cursor:pointer;
-}
-
-.form-control{
-  border-radius: 20px;
-  border: 2px solid #2b3030;
-  width: 100%;
-  display: block;
-
-  
-}
-
-input[type='checkbox']{
-    border: 1.5px solid black;
-}
 
 
 

@@ -23,11 +23,61 @@ document.getElementById('container').innerHTML += `<div class="list-group-item i
 </div>
 </div>
 `
-for(i=0;i< data.images.length;i++){
-    document.getElementById('container').innerHTML +=
-        `<img src="${data.images[i]}" class="m-3" style="width:20%;border: solid 1.5px grey;"></img> `
+document.getElementById('container').innerHTML += showCarrousel();
+
+
+//  CARROUSEL DE IMAGENES
+function showCarrousel(){
+    let carrousel = ` <div id="carouselExampleControls" class="carousel slide w-75 container" data-bs-ride="carousel" style="max-height:400px;">
+<button class="carousel-control-prev bg-secondary" type="button"style="width:8%;" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+<span class="carousel-control-prev-icon  aria-hidden="true"></span>
+<span class="visually-hidden">Previous</span>
+</button>
+<button class="carousel-control-next bg-secondary" style="width:8%;" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+<span class="carousel-control-next-icon" aria-hidden="true"></span>
+<span class="visually-hidden">Next</span>
+</button>
+<div class="carousel-inner" >
+    <div class="carousel-item active" style="height:400px;">
+      <img src="${data.images[0]}" class="d-block m-auto" style="height:100%;width:100%;"  alt="...">
+    </div>`
+    for(i=1;i< data.images.length;i++){
+    carrousel += 
+    `
+    
+     <div class="carousel-item " style="height:400px;">    
+      <img src="${data.images[i]}" class="d-block m-auto" style="height:100%;width:100%;"alt="...">
+    </div>`}
+    carrousel += `
+  </div>
+</div>`
+    
+return carrousel
+
 }
+
+
+   
+
+// PRODUCTOS RELACIONADOS
+document.getElementById('relatedProds').innerHTML += `<hr>
+<h4>Productos relacionados</h4>`
+
+for(relatedProds of data.relatedProducts){
+    document.getElementById('relatedProds').innerHTML += `
+
+
+<div class="col">
+
+<img onclick="setProdID(${relatedProds.id})"class="card-img-top" style="width: 19rem; cursor:pointer;" src="${relatedProds.image}" alt="Card image cap" onclick="setProdID()">
+<h5 class="ms-1">${relatedProds.name}</h5>
+
+
+</div> ` 
+}
+
 })
+
 // FETCH DE LOS COMENTARIOS
 const commentBtn = document.getElementById('comment-btn');
 const textArea = document.getElementById('product-info-textarea');
@@ -64,8 +114,8 @@ for(let comment of data){
             const hora =  `${today.getHours()}:${today.getMinutes()}:${today.getSeconds()}`
             if((textArea.value != "") && (localStorage.getItem('user') != null || sessionStorage.getItem('user') != null)){ 
             document.getElementById('container2').innerHTML +=`
-            <div class="list-group-item">
-            <div class="row">
+            <div class="list-group-item" style="background-color:#EAF5F0; border: 1px solid black;">
+            <div class="row" style="background-color:#EAF5F0">
             <div class="col-12">
             <strong>${localStorage.getItem('user') || sessionStorage.getItem('user')}</strong> - ${fecha} ${hora} - ${showStars(prodScore.value)}
             <p>${textArea.value}</p>
@@ -96,30 +146,40 @@ function showAlerts(){
 
     })
 
-
+// FUNCION PARA MOSTRAR LAS ESTRELLAS
 function showStars(cantidad){
     let starsHTML = "";
     for(i=0;i<cantidad;i++){
         starsHTML += `<span class="fa fa-star checked"></span>`;
     }
     for(i=cantidad; i < 5;i++){
-        starsHTML += `<span class="fa fa-star"></span>`;
+        starsHTML += `</span> <span class="fa fa-star"></span>`;
     }
     return starsHTML
-}   
+}
+function setProdID(id){
+    localStorage.setItem('prodID', id );
+    window.location = "product-info.html"
+  }                       
 
 
 
   // MOSTRAR PERFIL // BOTON INICIO DE SESIONJ
 sesionOn();
 function showUser(){
-document.getElementById('showUser').innerHTML = 
-`<div class="dropdown"><a class="nav-link usuario">${localStorage.getItem('user') || sessionStorage.getItem('user')}</a>
-    <div class="dropdown-content">
-    <a class="nav-link" onclick="cerrarSesion()">Cerrar Sesion</a>
-    </div>
-</div> `;
-}
+    document.getElementById('showUser').innerHTML = 
+    
+    ` <a class="nav-link dropdown-toggle text-dark fw-bold" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    ${localStorage.getItem('user') || sessionStorage.getItem('user')}
+    </a>
+    <ul class="dropdown-menu bg-light">
+    <li><a class="dropdown-item text-dark" href="./cart.html">Carrito</a></li>
+    <li><a class="dropdown-item text-dark" href="./my-profile.html">Mi perfil</a></li>
+    <li><hr class="dropdown-divider"></li>
+    <li><a class="dropdown-item text-dark" href="#" onclick="cerrarSesion()">Cerrar Sesión</a></li>
+    </ul>`
+    
+    }
 function sesionOn(){
 if(localStorage.getItem('user') || sessionStorage.getItem('user'))
 showUser();
