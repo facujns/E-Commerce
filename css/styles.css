@@ -339,3 +339,16 @@ margin-left: 10%;
   outline: none;
 }
 
+/* CARRITO */
+
+
+.cartForms{
+  width: 250px;
+}
+.cart-form-control{
+  border: 1px solid rgb(153, 153, 155);
+  height: 10px;
+}
+.cart-label{
+  width: 2px;
+}

@@ -28,11 +28,11 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-white p-1 border border-secondary border-1 text-dark">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-white p-1 border border-secondary border-1">
     <div class="container">
-      <button class="navbar-toggler text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon text-dark"></span>
+        <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav w-100 justify-content-between">
@@ -54,7 +54,24 @@
   </nav>
   <main>
    <div class="container infoYcomm" id="container">
-    
+    <div class="list-group-item infoYcomm">
+      <div class="row">
+      <div class="col-10"><h3 id="nombreProducto"></h3></div>
+      <div class="col-2"><button class="btn btn-primary" id="añadirCarrito">Añadir al carrito</button></div>
+      
+      <hr>
+      <strong id="precioProducto"></strong>
+      <p></p>
+      <strong>Descripción</strong>
+      <p id="descripcionProducto"></p>
+      <strong>Categoria</strong>
+      <p id="categoriaProducto"></p>
+      <strong>Cantidad de vendidos</strong>
+      <p id="cantidadVendidos"></p>
+      <strong>Imagenes Ilustrativas</strong>
+          
+      </div>
+      </div>
    </div>
    <div class="container infoYcomm" id="container2">
 
