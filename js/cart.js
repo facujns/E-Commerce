@@ -68,6 +68,7 @@ function subTotal(){
   document.getElementById('subtotalFinal').innerHTML =  subtotalFinal;
 
 }
+document.getElementById('subtotalFinal').innerHTML = subtotalFinal;
 
 function tipoEnvio(){
    cantidad = document.getElementById('articleCount').value;
@@ -107,7 +108,9 @@ function costos(){
   
    
 }
-
+function precioFinal(){
+  document.getElementById('precioTotal').innerHTML = producto.articles[0].currency +" " + (subtotal + costoEnvio) ;
+}
 
 let creditCard = document.getElementById('creditCard');
 creditCard.addEventListener('click',function(){
